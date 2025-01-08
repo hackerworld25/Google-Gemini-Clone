@@ -141,6 +141,9 @@
     height: 20px;
     animation: loader 3s infinite linear;
 }
+.dark-mode img{
+    cursor: pointer;
+}
 @keyframes loader {
     0%{
         background-position: -800px 0px;
@@ -155,6 +158,11 @@
     font-weight: 300;
     line-height: 1.8;
 }
+.dark-mode{
+    display: flex;
+    gap: 20px;
+}
+
 @media (max-width:600px){
     .main-bottom input{
         flex: none;

@@ -2,14 +2,31 @@ import React, { useContext, useState } from 'react'
 import './Sidebar.css'
 import {assets} from '../../assets/assets'
 import { Context } from '../../context/Context'
+import {contextUser} from '../Main/Main'
+import { useEffect } from 'react';
 
 const Sidebar = () => {
     const [extended,setExtended] = useState(false)
     const {onSent, previous, setrecentPromt,newChat} = useContext(Context)
+    const {isDark, setisDark} = useContext(contextUser) 
     const loadPromt = async (promt) => {
       setrecentPromt(promt)
       await onSent(promt)
     }
+    
+
+    useEffect(() => {
+      const side = document.querySelector('.sidebar');
+      const recentDark = document.querySelector('.recent');
+      if (isDark) {
+        side.classList.add('darkest_mode');
+        // recentDark.classList.add('dark_mode');
+      } else {
+        side.classList.remove('darkest_mode');
+        // recentDark.classList.remove('dark_mode');
+      }
+    }, [isDark]); // Trigger whenever isDark changes
+    
   return (
     <div className='sidebar'>
         <div className="top">

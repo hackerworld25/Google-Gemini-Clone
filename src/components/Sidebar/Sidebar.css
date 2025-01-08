@@ -59,6 +59,12 @@
     padding-right: 10px;
     cursor: pointer;
 }
+.darkest_mode{
+    background-color: hsl(209, 20%, 39%);
+    color: white;
+    --background-color: hsl(207,26%,17%);
+    --color: white;
+}
 @keyframes fadeIn {
     0%{
       opacity: 0;
